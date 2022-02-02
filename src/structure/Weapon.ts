@@ -41,31 +41,35 @@ export abstract class Weapon extends BaseWeapon {
 
 
 class Axe extends Weapon {
-  id = "axe";
-  name = "Axe";
+  id = "bionic-mechanical-arm";
+  name = "Bionic Mechanical Arm";
   attack = 20;
   price = 1000;
+  imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938363042775834674/bionic-mechanical-arm.png";
 }
 
 class Sword extends Weapon {
-  id = "sword";
-  name = "Sword";
+  id = "ufo-abduction";
+  name = "UFO Abduction";
   attack = 30;
   price = 2000;
+  imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938363042972962906/ufo-abduction.png";
 }
 
 class Dagger extends Weapon {
-  id = "dagger";
-  name = "Dagger";
+  id = "light-saber";
+  name = "Light Saber";
   attack = 40;
   price = 3000;
+  imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938363043191078942/light-saber.png";
 }
 
 class Mace extends Weapon {
-  id = "mace";
-  name = "Mace";
+  id = "laser-blaster";
+  name = "Laser Blaster";
   attack = 45;
   price = 3500;
+  imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938363043375632394/laser-blaster.png"
 }
 
 class Blaster extends Weapon {
