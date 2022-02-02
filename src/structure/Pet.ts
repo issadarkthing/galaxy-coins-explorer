@@ -37,34 +37,38 @@ export abstract class Pet extends BasePet {
 }
 
 export class Blob extends Pet {
-  name = "Blob";
-  id = "blob";
+  id = "fish-cyborg";
+  name = "Fish Cyborg";
   attack = 20;
   price = 13000;
+  imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938367141126762506/fish-cyborg.png"
 }
 
 export class Slime extends Pet {
-  name = "Slime";
-  id = "slime";
+  id = "robo-dinosaur";
+  name = "Robo Dinosaur";
   attack = 15;
   interceptRate = 0.2;
   price = 15000;
+  imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938367141692964914/robo-dinosaur.png";
 }
 
 export class Phoenix extends Pet {
-  name = "Phoenix";
-  id = "phoenix";
+  id = "hover-drone";
+  name = "Hover Drone";
   attack = 15;
   interceptRate = 0.2;
   price = 15000;
+  imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938367141944643584/hover-drone.png";
 }
 
 export class Titanoboa extends Pet {
-  name = "Titan-o-boa";
-  id = "titan-o-boa";
+  id = "k90";
+  name = "k90";
   attack = 5;
   interceptRate = 0.4;
   price = 30000;
+  imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938367142225670194/k90.png";
 }
 
 export class BeardedDragon extends Pet {
