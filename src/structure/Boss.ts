@@ -9,9 +9,9 @@ export abstract class Boss extends Fighter {
 
   static get all(): Boss[] {
     return [
-      new Cavernmonster("Manzana Banana"),
-      new Vortexscreamer("Burro Banana"),
-      new Rottingseeker("Barangan Banana"),
+      new Cavernmonster(),
+      new Vortexscreamer(),
+      new Rottingseeker(),
     ];
   }
 
@@ -33,10 +33,10 @@ export class Cavernmonster extends Boss {
   armor = 0.3;
   critChance = 0.1;
   critDamage = 3;
-  imageUrl = "https://www.runehq.com/image/monsterdb/v/vanstromklause.png";
+  imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938370472687566868/007-alien.png";
   
-  constructor(name: string) {
-    super(name);
+  constructor() {
+    super("007 Alien");
 
     const skill = new Heal(); 
     skill.setOwner(this);
@@ -54,10 +54,10 @@ export class Vortexscreamer extends Boss {
   armor = 0.35;
   critChance = 0.2;
   critDamage = 3.4;
-  imageUrl = "https://www.runehq.com/image/monsterdb/k/kriltsutsaroth.png"
+  imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938370472960213002/001-alien.png";
 
-  constructor(name: string) {
-    super(name);
+  constructor() {
+    super("001 Alien");
 
     const skill = new Rage(); 
     skill.setOwner(this);
@@ -75,10 +75,10 @@ export class Rottingseeker extends Boss {
   armor = 0.39;
   critChance = 0.2;
   critDamage = 3.8;
-  imageUrl = "https://www.runehq.com/image/monsterdb/k/kreearra.png";
+  imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938370473304158268/002-alien.png";
 
-  constructor(name: string) {
-    super(name);
+  constructor() {
+    super("002 Alien");
 
     const skill = new Defense(); 
     skill.setOwner(this);
