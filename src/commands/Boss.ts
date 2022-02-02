@@ -51,6 +51,8 @@ export default class extends Command {
           msg.channel.send(`${player.name} has earned ${bold(drop)} ${currency}!`);
           msg.channel.send(`${player.name} has earned ${bold(xpDrop)} xp!`);
 
+          player.save();
+
           if (currLevel !== player.level) {
             msg.channel.send(`${player.name} is now on level ${bold(player.level)}!`);
           }
