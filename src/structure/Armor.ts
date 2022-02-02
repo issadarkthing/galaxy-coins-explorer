@@ -41,29 +41,33 @@ export abstract class Armor extends BaseArmor {
 
 
 export class Helmet extends Armor {
-  id = "helmet";
-  name = "Helmet";
+  id = "hover-shoes";
+  name = "Hover Shoes";
   price = 8500;
   armor = 0.005
+  imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938363892734771210/hovershoes.png";
 }
 
 export class ChestPlate extends Armor {
-  id = "chest_plate";
-  name = "Chest Plate";
+  id = "jetpack";
+  name = "Jetpack";
   price = 5000;
   armor = 0.006
+  imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938363892998995998/jetpack.png";
 }
 
 export class Leggings extends Armor {
-  id = "leggings";
-  name = "Leggings";
+  id = "force-field";
+  name = "Force Field";
   price = 4500;
-  armor = 0.008
+  armor = 0.008;
+  imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938363893221302272/force-field.png";
 }
 
 export class Boots extends Armor {
-  id = "boots";
-  name = "Boots";
+  id = "cyber-suit";
+  name = "Cyber Suit";
   price = 5500;
-  armor = 0.011
+  armor = 0.011;
+  imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938363893565259836/cyber-suit.png";
 }
