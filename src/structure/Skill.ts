@@ -41,10 +41,11 @@ export abstract class Skill extends BaseSkill {
 }
 
 export class Rage extends Skill {
-  name = "Rage";
-  id = "rage";
+  name = "Meteor Shower";
+  id = "meteor-shower";
   description = "Does double damage when activated temporarily";
   price = 45_000;
+  imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938369672313724968/meteor_shower.png";
 
   use(p1: Fighter, _p2: Fighter) {
 
@@ -70,11 +71,12 @@ export class Rage extends Skill {
 }
 
 export class Heal extends Skill {
-  name = "Heal";
-  id = "heal";
+  name = "Hologram Heal";
+  id = "hologram-heal";
   description = "Heals 20% of hp when activated";
   price = 55_000;
   interceptRate = 0.1;
+  imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938369672083025950/hologram-heal.png"
 
   use(p1: Fighter, _p2: Fighter) {
 
@@ -100,11 +102,12 @@ export class Heal extends Skill {
 
 
 export class Defense extends Skill {
-  name = "Defense";
-  id = "defense";
+  name = "Satellite Defense System";
+  id = "satellite defense system";
   description = "Increase armor for 10% when activated";
   price = 50_000;
   interceptRate = 0.25;
+  imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938369671349026826/satellite-defense-system.png";
 
   use(p1: Fighter, _p2: Fighter) {
 
