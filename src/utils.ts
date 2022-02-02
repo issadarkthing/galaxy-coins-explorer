@@ -33,7 +33,7 @@ export function sleep(time: number) {
 
 export const random = new Random(MersenneTwister19937.autoSeed());
 
-export const currency = "Coin";
+export const currency = "<a:SpiralArms_Coin:938080604342325279>";
 
 
 export function toNList(items: string[], start = 1) {
