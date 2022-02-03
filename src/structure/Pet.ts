@@ -1,6 +1,7 @@
 import { Message } from "discord.js";
 import { Pet as BasePet } from "@jiman24/discordjs-rpg";
 import { Player } from "./Player";
+import { FISH_CYBORG, HOVER_DRONE, K90, ROBO_DINOSAUR } from "../utils";
 
 export abstract class Pet extends BasePet {
   abstract price: number;
@@ -38,7 +39,7 @@ export abstract class Pet extends BasePet {
 
 export class Blob extends Pet {
   id = "fish-cyborg";
-  name = "Fish Cyborg";
+  name = `Fish Cyborg ${FISH_CYBORG}`;
   attack = 20;
   price = 13000;
   imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938367141126762506/fish-cyborg.png"
@@ -46,7 +47,7 @@ export class Blob extends Pet {
 
 export class Slime extends Pet {
   id = "robo-dinosaur";
-  name = "Robo Dinosaur";
+  name = `Robo Dinosaur ${ROBO_DINOSAUR}`;
   attack = 15;
   interceptRate = 0.2;
   price = 15000;
@@ -55,7 +56,7 @@ export class Slime extends Pet {
 
 export class Phoenix extends Pet {
   id = "hover-drone";
-  name = "Hover Drone";
+  name = `Hover Drone ${HOVER_DRONE}`;
   attack = 15;
   interceptRate = 0.2;
   price = 15000;
@@ -64,7 +65,7 @@ export class Phoenix extends Pet {
 
 export class Titanoboa extends Pet {
   id = "k90";
-  name = "k90";
+  name = `k90 ${K90}`;
   attack = 5;
   interceptRate = 0.4;
   price = 30000;

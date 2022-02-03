@@ -1,7 +1,7 @@
 import { Fighter, Skill as BaseSkill } from "@jiman24/discordjs-rpg";
 import { Message, MessageEmbed } from "discord.js";
 import { oneLine } from "common-tags";
-import { formatPercent, code } from "../utils";
+import { formatPercent, code, METEOR_SHOWER, HOLOGRAM_HEAL, SATELLITE_DEFENSE_SYSTEM } from "../utils";
 import { Player } from "./Player";
 
 export abstract class Skill extends BaseSkill {
@@ -41,7 +41,7 @@ export abstract class Skill extends BaseSkill {
 }
 
 export class Rage extends Skill {
-  name = "Meteor Shower";
+  name = `Meteor Shower ${METEOR_SHOWER}`;
   id = "meteor-shower";
   description = "Does double damage when activated temporarily";
   price = 45_000;
@@ -71,7 +71,7 @@ export class Rage extends Skill {
 }
 
 export class Heal extends Skill {
-  name = "Hologram Heal";
+  name = `Hologram Heal ${HOLOGRAM_HEAL}`;
   id = "hologram-heal";
   description = "Heals 20% of hp when activated";
   price = 55_000;
@@ -102,7 +102,7 @@ export class Heal extends Skill {
 
 
 export class Defense extends Skill {
-  name = "Satellite Defense System";
+  name = `Satellite Defense System ${SATELLITE_DEFENSE_SYSTEM}`;
   id = "satellite defense system";
   description = "Increase armor for 10% when activated";
   price = 50_000;

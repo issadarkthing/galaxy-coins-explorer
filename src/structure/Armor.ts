@@ -1,6 +1,7 @@
 import { Message } from "discord.js";
 import { Armor as BaseArmor } from "@jiman24/discordjs-rpg";
 import { Player } from "../structure/Player";
+import { CYBER_SUIT, FORCE_FIELD, JETPACK } from "../utils";
 
 export abstract class Armor extends BaseArmor {
   abstract price: number;
@@ -42,7 +43,7 @@ export abstract class Armor extends BaseArmor {
 
 export class Helmet extends Armor {
   id = "hover-shoes";
-  name = "Hover Shoes";
+  name = `Hover Shoes ${CYBER_SUIT}`;
   price = 8500;
   armor = 0.005
   imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938363892734771210/hovershoes.png";
@@ -50,7 +51,7 @@ export class Helmet extends Armor {
 
 export class ChestPlate extends Armor {
   id = "jetpack";
-  name = "Jetpack";
+  name = `Jetpack ${JETPACK}`;
   price = 5000;
   armor = 0.006
   imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938363892998995998/jetpack.png";
@@ -58,7 +59,7 @@ export class ChestPlate extends Armor {
 
 export class Leggings extends Armor {
   id = "force-field";
-  name = "Force Field";
+  name = `Force Field ${FORCE_FIELD}`;
   price = 4500;
   armor = 0.008;
   imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938363893221302272/force-field.png";
@@ -66,7 +67,7 @@ export class Leggings extends Armor {
 
 export class Boots extends Armor {
   id = "cyber-suit";
-  name = "Cyber Suit";
+  name = `Cyber Suit ${CYBER_SUIT}`;
   price = 5500;
   armor = 0.011;
   imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938363893565259836/cyber-suit.png";

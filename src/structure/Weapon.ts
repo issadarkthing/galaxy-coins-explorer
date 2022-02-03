@@ -1,6 +1,7 @@
 import { Message } from "discord.js";
 import { Weapon as BaseWeapon } from "@jiman24/discordjs-rpg";
 import { Player } from "../structure/Player";
+import { BIONIC_MECHANICAL_ARM, LASER_BLASTER, LIGHT_SABER, UFO_ABDUCTION } from "../utils";
 
 export abstract class Weapon extends BaseWeapon {
   abstract price: number;
@@ -42,7 +43,7 @@ export abstract class Weapon extends BaseWeapon {
 
 class Axe extends Weapon {
   id = "bionic-mechanical-arm";
-  name = "Bionic Mechanical Arm";
+  name = `Bionic Mechanical Arm ${BIONIC_MECHANICAL_ARM}`;
   attack = 20;
   price = 1000;
   imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938363042775834674/bionic-mechanical-arm.png";
@@ -50,7 +51,7 @@ class Axe extends Weapon {
 
 class Sword extends Weapon {
   id = "ufo-abduction";
-  name = "UFO Abduction";
+  name = `UFO Abduction ${UFO_ABDUCTION}`;
   attack = 30;
   price = 2000;
   imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938363042972962906/ufo-abduction.png";
@@ -58,7 +59,7 @@ class Sword extends Weapon {
 
 class Dagger extends Weapon {
   id = "light-saber";
-  name = "Light Saber";
+  name = `Light Saber ${LIGHT_SABER}`;
   attack = 40;
   price = 3000;
   imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938363043191078942/light-saber.png";
@@ -66,7 +67,7 @@ class Dagger extends Weapon {
 
 class Mace extends Weapon {
   id = "laser-blaster";
-  name = "Laser Blaster";
+  name = `Laser Blaster ${LASER_BLASTER}`;
   attack = 45;
   price = 3500;
   imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938363043375632394/laser-blaster.png"

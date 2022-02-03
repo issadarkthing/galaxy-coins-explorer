@@ -1,5 +1,5 @@
 import { Fighter } from "@jiman24/discordjs-rpg";
-import { currency } from "../utils";
+import { currency, KHINS, SUTAI, VOHEALL } from "../utils";
 import { Defense, Heal, Rage } from "../structure/Skill";
 import { Phoenix, Slime, Titanoboa } from "./Pet";
 
@@ -36,7 +36,7 @@ export class Cavernmonster extends Boss {
   imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938370472687566868/007-alien.png";
   
   constructor() {
-    super("Sutai");
+    super(`Sutai ${SUTAI}`);
 
     const skill = new Heal(); 
     skill.setOwner(this);
@@ -57,7 +57,7 @@ export class Vortexscreamer extends Boss {
   imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938370472960213002/001-alien.png";
 
   constructor() {
-    super("Voheall");
+    super(`Voheall ${VOHEALL}`);
 
     const skill = new Rage(); 
     skill.setOwner(this);
@@ -78,7 +78,7 @@ export class Rottingseeker extends Boss {
   imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938370473304158268/002-alien.png";
 
   constructor() {
-    super("Khins");
+    super(`Khins ${KHINS}`);
 
     const skill = new Defense(); 
     skill.setOwner(this);

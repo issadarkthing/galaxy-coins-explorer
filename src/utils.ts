@@ -90,3 +90,23 @@ export function remove<T>(item: T, arr: T[], count = 1) {
 export function formatPercent(num: number) {
   return `${(num * 100).toFixed(2)}%`
 }
+
+
+export const CYBER_SUIT = "<:cybersuit:938690479946600489>";
+export const FORCE_FIELD = "<:forcefield:938690728282972231>";
+export const HOVERSHOES = "<:hovershoes:938690888790573086>";
+export const JETPACK = "<:jetpack:938691007506169907>";
+export const KHINS = "<:Khins:938691158853443594>";
+export const SUTAI = "<:Sutai:938691293465419906>";
+export const VOHEALL = "<:Voheall:938691406992637982>";
+export const FISH_CYBORG = "<:fishcyborg:938691601914556436>";
+export const HOVER_DRONE = "<:hoverdrone:938691725902364682>";
+export const K90 = "<:k90:938691869527920641>";
+export const ROBO_DINOSAUR = "<:robodinosaur:938691985081004102>";
+export const HOLOGRAM_HEAL = "<:hologramheal:938692130677882941>";
+export const METEOR_SHOWER = "<:meteor_shower:938692259673702440>";
+export const SATELLITE_DEFENSE_SYSTEM = "<:satellitedefensesystem:938692411964682250>";
+export const BIONIC_MECHANICAL_ARM = "<:bionicmechanicalarm:938692551253295176>";
+export const LASER_BLASTER = "<:laserblaster:938692681670991882>";
+export const LIGHT_SABER = "<:lightsaber:938692816060690452>";
+export const UFO_ABDUCTION = "<:ufoabduction:938693091672596570>";
