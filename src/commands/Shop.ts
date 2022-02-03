@@ -4,7 +4,11 @@ import {
   code, 
   toNList, 
   validateIndex, 
-  validateNumber, 
+  validateNumber,
+  CYBER_SUIT,
+  K90,
+  LASER_BLASTER,
+  HOLOGRAM_HEAL, 
 } from "../utils";
 import { Armor } from "../structure/Armor";
 import { Command } from "@jiman24/commandment";
@@ -97,10 +101,10 @@ export default class extends Command {
 
     const rpgList = stripIndents`
       **Categories**
-      armor
-      weapon
-      pet
-      skill
+      armor ${CYBER_SUIT}
+      weapon ${LASER_BLASTER}
+      pet ${K90}
+      skill ${HOLOGRAM_HEAL}
       ------
       To open armor shop use command \`${prefix}${this.name} armor\`
       `;
