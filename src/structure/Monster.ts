@@ -12,9 +12,9 @@ export class Monster extends Fighter {
   constructor(player: Player) {
     super("");
 
-    const monsterData = random.pick(data);
-    this.name = monsterData.name;
-    this.imageUrl = monsterData.imageUrl;
+    const imageUrl = random.pick(imageUrls);
+    this.name = this.getName(imageUrl);
+    this.imageUrl = imageUrl;
     this.difficulty = player.level;
     this.attack = player.attack + this.randomAttrib();
     this.hp = player.hp + this.randomAttrib();
@@ -33,6 +33,10 @@ export class Monster extends Fighter {
     }
   }
 
+  private getName(url: string) {
+    return url.match(/\/([^\/]*)\.png$/)![1];
+  }
+
   private randomAttrib() {
     return random.integer(-3, this.difficulty);
   }
@@ -47,209 +51,105 @@ export class Monster extends Fighter {
   }
 }
 
-const data = [
-  {
-    name: "050 Alien",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373181847269396/050-alien.png",
-  },
-  {
-    name: "048 Happy",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373182082134066/048-happy.png",
-  },
-  {
-    name: "047 Amazed",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373182300229642/047-amazed.png",
-  },
-  {
-    name: "044 Happy",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373182522540103/044-happy.png",
-  },
-  {
-    name: "044 Alien",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373182757433404/044-alien.png",
-  },
-  {
-    name: "042 Freak",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373182950367252/042-freak.png",
-  },
-  {
-    name: "041 Amazed",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373183164264498/041-amazed.png",
-  },
-  {
-    name: "041 Alien",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373183399141416/041-alien.png",
-  },
-  {
-    name: "040 Sad",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373183705333790/040-sad.png",
-  },
-  {
-    name: "039 Sad",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373183919251466/039-sad.png",
-  },
-  {
-    name: "039 Alien 3",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373408993980467/039-alien_3.png",
-  },
-  {
-    name: "037 Evil",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373409216274442/037-evil.png",
-  },
-  {
-    name: "036 Alien",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373409455345704/036-alien.png",
-  },
-  {
-    name: "035 Alien",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373409753169920/035-alien.png",
-  },
-  {
-    name: "032 Alien",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373410222923816/032-alien.png",
-  },
-  {
-    name: "028 UFO",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373410453585920/028-ufo.png",
-  },
-  {
-    name: "026 Zombie",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373410730438676/026-zombie.png",
-  },
-  {
-    name: "025 Worried",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373411091140658/025-worried.png",
-  },
-  {
-    name: "024 Confused",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373411472809994/024-confused.png",
-  },
-  {
-    name: "023 Scared",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373411753824316/023-scared.png",
-  },
-  {
-    name: "023 Alien",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373491059740712/023-alien.png",
-  },
-  {
-    name: "022 Angry",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373491261055006/022-angry.png",
-  },
-  {
-    name: "021 Amused",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373491495952424/021-unamused.png",
-  },
-  {
-    name: "020 Alien",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373491688869908/020-alien.png",
-  },
-  {
-    name: "019 Worried",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373491877625886/019-worried.png",
-  },
-  {
-    name: "019 Alien 3",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373492078956544/019-alien_3.png",
-  },
-  {
-    name: "018 Evil",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373492305461278/018-evil.png",
-  },
-  {
-    name: "017 Angry",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373492506779668/017-angry.png",
-  },
-  {
-    name: "016 Love",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373492695515136/016-love.png",
-  },
-  {
-    name: "015 In Love",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373492922024016/015-in_love.png",
-  },
-  {
-    name: "014 Annoyed",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373571774906408/014-annoyed.png",
-  },
-  {
-    name: "014 Alien",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373574148886568/014-alien.png",
-  },
-  {
-    name: "013 Happy",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373574446694470/013-happy.png",
-  },
-  {
-    name: "012 Annoyed",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373574639624252/012-annoyed.png",
-  },
-  {
-    name: "012 Alien",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373574828359700/012-alien.png",
-  },
-  {
-    name: "011 Excited",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373575029710908/011-Excited.png",
-  },
-  {
-    name: "010 Happy",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373575197470720/010-happy.png",
-  },
-  {
-    name: "009 Death",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373575558201374/009-death.png",
-  },
-  {
-    name: "008 Excited",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373575809851412/008-Excited.png",
-  },
-  {
-    name: "008 Alien 2",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373576099246151/008-alien_2.png",
-  },
-  {
-    name: "007 Shocked",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373638338539530/007-shocked.png",
-  },
-  {
-    name: "006 Silly",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373638556635146/006-silly.png",
-  },
-  {
-    name: "006 Alien 2",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373638799888404/006-alien_2.png",
-  },
-  {
-    name: "006 Alien 2",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373638799888404/006-alien_2.png",
-  },
-  {
-    name: "005 Space Ship",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373639294840863/005-space_ship.png",
-  },
-  {
-    name: "005 Love",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373639684902962/005-love.png",
-  },
-  {
-    name: "004 Happy",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373640255307776/004-happy.png",
-  },
-  {
-    name: "003 Angry",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373640616026192/003-angry.png",
-  },
-  {
-    name: "002 Scared",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373640947380234/002-scared.png",
-  },
-  {
-    name: "001 Bored",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373641417162802/001-bored.png",
-  },
-  {
-    name: "010 Space Ship",
-    imageUrl: "https://cdn.discordapp.com/attachments/936892253807464458/938373641924665364/010-space_ship.png",
-  },
+const imageUrls = [
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701495757598780/Orcidis.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701495937949766/Lendrun.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701496122478622/Scekveks.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701496315424808/Teercer.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701496520949760/Nustor.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701496780988426/Sellois.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701497066213387/Scrussix.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701497275908096/Ghohaids.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701497498239006/Khendrud.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701497733111858/Tuks.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701378900090900/Grozax.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701379235631144/Usnons.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701379608932363/Struktaks.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701379868975104/Usti.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701380196106260/Akons.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701380426801202/Sholoids.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701380774924298/Huneal.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701381106290748/Vats.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701381517320212/Ildoui.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701381815111710/Dhehrod.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701225447284806/Oldru.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701225665380422/Aphroil.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701225883496458/Iqot.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701226088992778/Sailgrits.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701226294530128/Febers.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701226504241152/Inail.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701226718162964/Zogoi.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701226953027614/Xunuks.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701227175313458/Ghaviens.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701227393437736/Crikkaiks.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701034803572746/Mahuze.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701035051028530/Uged.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701035290132541/Ahnids.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701035931828245/Bhellan.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701036196098088/Scraktaks.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701036456128512/Xeges.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701036720361482/Xieko.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701036921716757/Olnis.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701037127225374/Kolmo.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938701037462761522/Pheller.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700935037865984/Fadezer.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700935243374652/Zenix.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700935478272040/Khod.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700935755071528/Chaiphre.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700935985786880/Sheihloll.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700936212283403/Esbil.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700936459714570/Scrusu.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700936812044308/Scruukon.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700937155997736/Qhaciks.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700937386672179/Dhenziels.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700674152144896/Nirkrels.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700674361872444/Dilphaex.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700674575794196/Ostruks.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700674781311016/Aaceons.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700675016175626/Truls.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700675200733194/Shingus.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700675628535808/Ivoih.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700675821469746/Kraandeks.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700676047978566/Qirrods.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700676291256320/Kiekkai.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700576009641984/Vikvok.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700576236113960/Craenuts.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700576450048040/Kron.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700576655560784/Xaatoins.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700576890445894/Coczen.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700577116925982/Hurleks.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700577322438706/Zots.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700577611870259/Mazbie.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700577788002334/Crekveins.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700578077421598/Gad.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700461769383947/Ikzon.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700462054604820/Brongrill.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700462339788800/Cakto.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700462536917032/Drakvel.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700462813765662/Bidath.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700463040262144/Gocrel.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700463258345492/Uhnet.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700463635845160/Hanall.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700463904260117/Ghurkrins.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700464277561375/Ghuccun.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700310610853918/Krinkroils.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700310996738048/Nernai.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700311223210045/Aphri.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700311458099240/Scrud.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700311734927420/Taikvox.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700311953022996/Scal.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700312145977374/Ulzeds.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700312422789210/Zegos.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700312674435122/Ogmeins.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700312989040660/Brugnoids.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700099297640518/Krolvod.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700099486355526/Imno.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700099738030131/Thruudrads.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700100090355712/Occer.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700100329414666/Ehmi.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700100698505226/Muurkroi.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700100941795358/Rigno.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700101436706916/Shaelgai.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700101721915402/Qhevraiks.png",
+  "https://cdn.discordapp.com/attachments/921236230220447835/938700102015537172/Agval.png",
 ];
