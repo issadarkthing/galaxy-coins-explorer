@@ -1,7 +1,7 @@
 import { Message } from "discord.js";
 import { Armor as BaseArmor } from "@jiman24/discordjs-rpg";
 import { Player } from "../structure/Player";
-import { CYBER_SUIT, FORCE_FIELD, JETPACK } from "../utils";
+import { CYBER_SUIT, FORCE_FIELD, HOVERSHOES, JETPACK } from "../utils";
 
 export abstract class Armor extends BaseArmor {
   abstract price: number;
@@ -43,7 +43,7 @@ export abstract class Armor extends BaseArmor {
 
 export class Helmet extends Armor {
   id = "hover-shoes";
-  name = `Hover Shoes ${CYBER_SUIT}`;
+  name = `Hover Shoes ${HOVERSHOES}`;
   price = 8500;
   armor = 0.005
   imageUrl = "https://cdn.discordapp.com/attachments/936892253807464458/938363892734771210/hovershoes.png";
