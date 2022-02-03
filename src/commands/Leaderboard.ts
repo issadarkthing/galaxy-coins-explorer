@@ -1,7 +1,8 @@
 import { Command } from "@jiman24/commandment";
-import { Message, MessageEmbed } from "discord.js";
+import { Message } from "discord.js";
 import { client } from "../index";
 import { bold, currency } from "../utils";
+import { MessageEmbed } from "../structure/MessageEmbed";
 
 export default class extends Command {
   name = "leaderboard";
@@ -16,7 +17,7 @@ export default class extends Command {
       .slice(0, 10)
       .join("\n");
 
-    const embed = new MessageEmbed()
+    const embed = new MessageEmbed(msg.author)
       .setColor("RANDOM")
       .setTitle("Leaderboard")
       .setDescription(bold(`Name | ${currency}\n`) + player);

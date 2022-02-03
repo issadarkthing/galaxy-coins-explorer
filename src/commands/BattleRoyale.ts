@@ -1,5 +1,6 @@
 import { Command } from "@jiman24/commandment";
-import { Message, MessageEmbed } from "discord.js";
+import { Message } from "discord.js";
+import { MessageEmbed } from "../structure/MessageEmbed";
 import { ButtonHandler } from "@jiman24/discordjs-button";
 import { Player } from "../structure/Player";
 import { Battle } from "@jiman24/discordjs-rpg";
@@ -17,7 +18,7 @@ export default class extends Command {
 
     const players = [] as Player[];
 
-    const embed = new MessageEmbed()
+    const embed = new MessageEmbed(msg.author)
       .setColor("RANDOM")
       .setTitle("Battle Royale")
       .setDescription(
